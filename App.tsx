@@ -33,7 +33,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard")
 
   return (
-    <TooltipProvider>
+    <TooltipProvider disableHoverableContent>
       <div className="flex h-screen overflow-hidden">
         <AppSidebar activeTab={activeTab} onTabChange={setActiveTab} />
         <div className="flex flex-1 flex-col overflow-hidden">
