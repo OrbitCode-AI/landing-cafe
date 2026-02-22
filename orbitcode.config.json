@@ -1,0 +1,7 @@
+{
+  "name": "Cozy Cafe",
+  "description": "Dashboard showcasing shadcn/ui components",
+  "icon": "☕",
+  "defaultTheme": "light",
+  "defaultLayout": "fullscreen"
+}
