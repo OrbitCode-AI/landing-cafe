@@ -54,3 +54,15 @@ function ScrollBar({
 }
 
 export { ScrollArea, ScrollBar }
+
+export default function ScrollAreaPreview() {
+  return (
+    <ScrollArea className="h-48 w-64 rounded-md border p-4">
+      <div className="flex flex-col gap-2">
+        {Array.from({ length: 20 }, (_, i) => (
+          <div key={i} className="text-sm">Item {i + 1}</div>
+        ))}
+      </div>
+    </ScrollArea>
+  )
+}

@@ -218,3 +218,7 @@ function CalendarDayButton({
 }
 
 export { Calendar, CalendarDayButton }
+
+export default function CalendarPreview() {
+  return <Calendar className="rounded-md border" />
+}

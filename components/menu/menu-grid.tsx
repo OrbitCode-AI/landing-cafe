@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { menuItems as initialItems } from "@/data/menu-items"
 import { MenuCard } from "./menu-card"
-import { AddItemDialog } from "./add-item-dialog"
+import AddItemDialog from "./add-item-dialog"
 
-export function MenuGrid() {
+export default function MenuGrid() {
   const [items, setItems] = useState(initialItems)
 
   function toggleAvailability(id: string) {

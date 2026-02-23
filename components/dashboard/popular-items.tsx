@@ -3,7 +3,7 @@ import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
 import { popularItems } from "@/data/stats"
 
-export function PopularItems() {
+export default function PopularItems() {
   return (
     <Card>
       <CardHeader>

@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator"
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
@@ -16,6 +17,14 @@ const navItems: { icon: typeof Coffee; label: string; value: Tab }[] = [
   { icon: ClipboardList, label: "Orders", value: "orders" },
   { icon: Settings, label: "Settings", value: "settings" },
 ]
+
+export default function AppSidebarPreview() {
+  return (
+    <TooltipProvider>
+      <AppSidebar activeTab="dashboard" onTabChange={() => {}} />
+    </TooltipProvider>
+  )
+}
 
 export function AppSidebar({
   activeTab,

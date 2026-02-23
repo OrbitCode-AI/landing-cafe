@@ -19,3 +19,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
 }
 
 export { Input }
+
+export default function InputPreview() {
+  return <Input placeholder="Type something..." className="max-w-sm" />
+}

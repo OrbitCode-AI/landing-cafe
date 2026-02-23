@@ -20,3 +20,7 @@ function Label({
 }
 
 export { Label }
+
+export default function LabelPreview() {
+  return <Label>Email address</Label>
+}

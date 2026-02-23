@@ -105,3 +105,31 @@ export {
   AvatarGroup,
   AvatarGroupCount,
 }
+
+export default function AvatarPreview() {
+  return (
+    <div className="flex items-center gap-4">
+      <Avatar size="sm">
+        <AvatarFallback>SM</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarFallback>JD</AvatarFallback>
+      </Avatar>
+      <Avatar size="lg">
+        <AvatarFallback>LG</AvatarFallback>
+      </Avatar>
+      <AvatarGroup>
+        <Avatar>
+          <AvatarFallback>A</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarFallback>B</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarFallback>C</AvatarFallback>
+        </Avatar>
+        <AvatarGroupCount>+2</AvatarGroupCount>
+      </AvatarGroup>
+    </div>
+  )
+}

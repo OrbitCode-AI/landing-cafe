@@ -156,3 +156,20 @@ export {
   DialogTitle,
   DialogTrigger,
 }
+
+export default function DialogPreview() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogDescription>This is a dialog description.</DialogDescription>
+        </DialogHeader>
+        <p className="text-sm text-muted-foreground">Dialog content goes here.</p>
+      </DialogContent>
+    </Dialog>
+  )
+}

@@ -22,7 +22,7 @@ import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
 
-export function SettingsForm() {
+export default function SettingsForm() {
   function handleSave() {
     toast.success("Settings saved!", {
       description: "Your preferences have been updated.",

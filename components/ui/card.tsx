@@ -90,3 +90,20 @@ export {
   CardDescription,
   CardContent,
 }
+
+export default function CardPreview() {
+  return (
+    <Card className="max-w-sm">
+      <CardHeader>
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>Card description goes here.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground">Card content with some example text.</p>
+      </CardContent>
+      <CardFooter>
+        <p className="text-sm text-muted-foreground">Card footer</p>
+      </CardFooter>
+    </Card>
+  )
+}

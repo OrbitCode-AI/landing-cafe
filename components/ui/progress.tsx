@@ -29,3 +29,7 @@ function Progress({
 }
 
 export { Progress }
+
+export default function ProgressPreview() {
+  return <Progress value={60} className="max-w-sm" />
+}

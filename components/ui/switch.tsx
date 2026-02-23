@@ -31,3 +31,12 @@ function Switch({
 }
 
 export { Switch }
+
+export default function SwitchPreview() {
+  return (
+    <div className="flex items-center gap-2">
+      <Switch id="preview" />
+      <label htmlFor="preview" className="text-sm">Toggle me</label>
+    </div>
+  )
+}

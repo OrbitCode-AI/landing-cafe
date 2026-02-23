@@ -23,7 +23,7 @@ import {
 import { toast } from "sonner"
 import { categories } from "@/data/menu-items"
 
-export function AddItemDialog() {
+export default function AddItemDialog() {
   const [open, setOpen] = useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

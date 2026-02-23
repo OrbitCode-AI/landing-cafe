@@ -34,3 +34,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
 }
 
 export { Toaster }
+
+export default function ToasterPreview() {
+  return <Toaster />
+}

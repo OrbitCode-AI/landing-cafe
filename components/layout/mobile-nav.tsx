@@ -19,6 +19,10 @@ const navItems: { icon: typeof Coffee; label: string; value: Tab }[] = [
   { icon: Settings, label: "Settings", value: "settings" },
 ]
 
+export default function MobileNavPreview() {
+  return <MobileNav activeTab="dashboard" onTabChange={() => {}} />
+}
+
 export function MobileNav({
   activeTab,
   onTabChange,

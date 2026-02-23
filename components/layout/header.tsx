@@ -20,6 +20,10 @@ const tabLabels: Record<Tab, string> = {
   settings: "Settings",
 }
 
+export default function HeaderPreview() {
+  return <Header activeTab="dashboard" onTabChange={() => {}} />
+}
+
 export function Header({
   activeTab,
   onTabChange,

@@ -11,6 +11,22 @@ const categoryColors: Record<string, string> = {
   smoothie: "bg-purple-100 text-purple-800",
 }
 
+export default function MenuCardPreview() {
+  return (
+    <MenuCard
+      item={{
+        id: "1",
+        name: "Caramel Latte",
+        description: "Rich espresso with steamed milk and caramel syrup, topped with whipped cream.",
+        price: 5.50,
+        category: "coffee",
+        available: true,
+      }}
+      onToggleAvailability={() => {}}
+    />
+  )
+}
+
 export function MenuCard({
   item,
   onToggleAvailability,

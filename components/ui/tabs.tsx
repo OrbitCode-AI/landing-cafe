@@ -87,3 +87,20 @@ function TabsContent({
 }
 
 export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants }
+
+export default function TabsPreview() {
+  return (
+    <Tabs defaultValue="tab1" className="max-w-md">
+      <TabsList>
+        <TabsTrigger value="tab1">Account</TabsTrigger>
+        <TabsTrigger value="tab2">Password</TabsTrigger>
+      </TabsList>
+      <TabsContent value="tab1">
+        <p className="text-sm text-muted-foreground p-2">Account settings go here.</p>
+      </TabsContent>
+      <TabsContent value="tab2">
+        <p className="text-sm text-muted-foreground p-2">Password settings go here.</p>
+      </TabsContent>
+    </Tabs>
+  )
+}

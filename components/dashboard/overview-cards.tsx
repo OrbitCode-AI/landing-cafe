@@ -5,7 +5,7 @@ import { stats } from "@/data/stats"
 
 const icons = [DollarSign, ShoppingBag, Users, Clock]
 
-export function OverviewCards() {
+export default function OverviewCards() {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat, i) => {

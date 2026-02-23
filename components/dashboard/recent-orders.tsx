@@ -20,7 +20,7 @@ const statusVariant: Record<OrderStatus, "default" | "secondary" | "destructive"
   cancelled: "destructive",
 }
 
-export function RecentOrders() {
+export default function RecentOrders() {
   return (
     <Card>
       <CardHeader>

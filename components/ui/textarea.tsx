@@ -16,3 +16,7 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
 }
 
 export { Textarea }
+
+export default function TextareaPreview() {
+  return <Textarea placeholder="Type your message here..." className="max-w-sm" />
+}

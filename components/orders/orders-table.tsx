@@ -37,7 +37,7 @@ const statusVariant: Record<OrderStatus, "default" | "secondary" | "destructive"
   cancelled: "destructive",
 }
 
-export function OrdersTable() {
+export default function OrdersTable() {
   const [search, setSearch] = useState("")
   const [statusFilter, setStatusFilter] = useState<Set<OrderStatus>>(
     new Set(["pending", "preparing", "ready", "completed", "cancelled"])

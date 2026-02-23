@@ -24,3 +24,13 @@ function Separator({
 }
 
 export { Separator }
+
+export default function SeparatorPreview() {
+  return (
+    <div className="flex flex-col gap-2 max-w-sm">
+      <span className="text-sm">Above</span>
+      <Separator />
+      <span className="text-sm">Below</span>
+    </div>
+  )
+}

@@ -13,6 +13,17 @@ import type { OrderStatus } from "@/data/orders"
 
 const statuses: OrderStatus[] = ["pending", "preparing", "ready", "completed", "cancelled"]
 
+export default function OrdersFiltersPreview() {
+  return (
+    <OrdersFilters
+      search=""
+      onSearchChange={() => {}}
+      statusFilter={new Set<OrderStatus>(["pending", "preparing", "ready", "completed", "cancelled"])}
+      onStatusFilterChange={() => {}}
+    />
+  )
+}
+
 export function OrdersFilters({
   search,
   onSearchChange,
