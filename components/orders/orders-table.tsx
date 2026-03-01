@@ -1,15 +1,15 @@
-import { useState, useMemo } from "react"
-import { MoreHorizontal, Eye, RefreshCw } from "lucide-react"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { useState, useMemo } from 'react'
+import { MoreHorizontal, Eye, RefreshCw } from 'lucide-react'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from '@/components/ui/dropdown-menu'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import {
   Table,
   TableBody,
@@ -17,36 +17,32 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { toast } from "sonner"
-import { allOrders } from "@/data/orders"
-import type { Order, OrderStatus } from "@/data/orders"
-import { OrdersFilters } from "./orders-filters"
-import { OrderDetailDialog } from "./order-detail-dialog"
+} from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { toast } from 'sonner'
+import { allOrders } from '@/data/orders'
+import type { Order, OrderStatus } from '@/data/orders'
+import { OrdersFilters } from './orders-filters'
+import { OrderDetailDialog } from './order-detail-dialog'
 
-const statusVariant: Record<OrderStatus, "default" | "secondary" | "destructive" | "outline"> = {
-  pending: "outline",
-  preparing: "secondary",
-  ready: "default",
-  completed: "default",
-  cancelled: "destructive",
+const statusVariant: Record<OrderStatus, 'default' | 'secondary' | 'destructive' | 'outline'> = {
+  pending: 'outline',
+  preparing: 'secondary',
+  ready: 'default',
+  completed: 'default',
+  cancelled: 'destructive',
 }
 
 export default function OrdersTable() {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState('')
   const [statusFilter, setStatusFilter] = useState<Set<OrderStatus>>(
-    new Set(["pending", "preparing", "ready", "completed", "cancelled"])
+    new Set(['pending', 'preparing', 'ready', 'completed', 'cancelled']),
   )
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null)
   const [detailOpen, setDetailOpen] = useState(false)
 
   function toggleStatus(status: OrderStatus) {
-    setStatusFilter((prev) => {
+    setStatusFilter(prev => {
       const next = new Set(prev)
       if (next.has(status)) {
         next.delete(status)
@@ -58,14 +54,14 @@ export default function OrdersTable() {
   }
 
   const filteredOrders = useMemo(() => {
-    return allOrders.filter((order) => {
+    return allOrders.filter(order => {
       if (!statusFilter.has(order.status)) return false
       if (search) {
         const q = search.toLowerCase()
         return (
           order.customer.toLowerCase().includes(q) ||
           order.id.toLowerCase().includes(q) ||
-          order.items.some((item) => item.toLowerCase().includes(q))
+          order.items.some(item => item.toLowerCase().includes(q))
         )
       }
       return true
@@ -79,11 +75,11 @@ export default function OrdersTable() {
 
   function handleUpdateStatus(order: Order) {
     const nextStatus: Record<OrderStatus, string> = {
-      pending: "preparing",
-      preparing: "ready",
-      ready: "completed",
-      completed: "completed",
-      cancelled: "cancelled",
+      pending: 'preparing',
+      preparing: 'ready',
+      ready: 'completed',
+      completed: 'completed',
+      cancelled: 'cancelled',
     }
     toast.success(`Order ${order.id} updated`, {
       description: `Status changed to "${nextStatus[order.status]}".`,
@@ -113,21 +109,19 @@ export default function OrdersTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredOrders.map((order) => (
+            {filteredOrders.map(order => (
               <TableRow key={order.id}>
                 <TableCell className="font-mono text-sm">{order.id}</TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
                     <Avatar className="h-7 w-7">
-                      <AvatarFallback className="text-xs bg-muted">
-                        {order.initials}
-                      </AvatarFallback>
+                      <AvatarFallback className="text-xs bg-muted">{order.initials}</AvatarFallback>
                     </Avatar>
                     <span className="text-sm font-medium">{order.customer}</span>
                   </div>
                 </TableCell>
                 <TableCell className="text-sm text-muted-foreground max-w-48 truncate">
-                  {order.items.join(", ")}
+                  {order.items.join(', ')}
                 </TableCell>
                 <TableCell className="text-sm">${order.total.toFixed(2)}</TableCell>
                 <TableCell>
@@ -152,8 +146,7 @@ export default function OrdersTable() {
                         <TooltipTrigger asChild>
                           <DropdownMenuItem
                             onClick={() => handleUpdateStatus(order)}
-                            disabled={order.status === "completed" || order.status === "cancelled"}
-                          >
+                            disabled={order.status === 'completed' || order.status === 'cancelled'}>
                             <RefreshCw className="mr-2 h-4 w-4" />
                             Update Status
                           </DropdownMenuItem>
@@ -176,11 +169,7 @@ export default function OrdersTable() {
         </Table>
       </ScrollArea>
 
-      <OrderDetailDialog
-        order={selectedOrder}
-        open={detailOpen}
-        onOpenChange={setDetailOpen}
-      />
+      <OrderDetailDialog order={selectedOrder} open={detailOpen} onOpenChange={setDetailOpen} />
     </div>
   )
 }

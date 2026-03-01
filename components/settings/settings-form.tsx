@@ -1,31 +1,31 @@
-import { Info } from "lucide-react"
+import { Info } from 'lucide-react'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from '@/components/ui/accordion'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
+} from '@/components/ui/select'
+import { Slider } from '@/components/ui/slider'
+import { Switch } from '@/components/ui/switch'
+import { Textarea } from '@/components/ui/textarea'
+import { toast } from 'sonner'
 
 export default function SettingsForm() {
   function handleSave() {
-    toast.success("Settings saved!", {
-      description: "Your preferences have been updated.",
+    toast.success('Settings saved!', {
+      description: 'Your preferences have been updated.',
     })
   }
 
@@ -39,7 +39,10 @@ export default function SettingsForm() {
         </AlertDescription>
       </Alert>
 
-      <Accordion type="multiple" defaultValue={["general", "notifications", "appearance"]} className="w-full">
+      <Accordion
+        type="multiple"
+        defaultValue={['general', 'notifications', 'appearance']}
+        className="w-full">
         <AccordionItem value="general">
           <AccordionTrigger className="text-base">General</AccordionTrigger>
           <AccordionContent>
@@ -97,15 +100,21 @@ export default function SettingsForm() {
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-2">
                     <Checkbox id="daily" defaultChecked />
-                    <label htmlFor="daily" className="text-sm">Daily summary</label>
+                    <label htmlFor="daily" className="text-sm">
+                      Daily summary
+                    </label>
                   </div>
                   <div className="flex items-center gap-2">
                     <Checkbox id="weekly" defaultChecked />
-                    <label htmlFor="weekly" className="text-sm">Weekly report</label>
+                    <label htmlFor="weekly" className="text-sm">
+                      Weekly report
+                    </label>
                   </div>
                   <div className="flex items-center gap-2">
                     <Checkbox id="monthly" />
-                    <label htmlFor="monthly" className="text-sm">Monthly analytics</label>
+                    <label htmlFor="monthly" className="text-sm">
+                      Monthly analytics
+                    </label>
                   </div>
                 </div>
               </div>
@@ -125,7 +134,9 @@ export default function SettingsForm() {
               <div className="flex items-center justify-between">
                 <div className="flex flex-col gap-1">
                   <Label>Compact Mode</Label>
-                  <p className="text-sm text-muted-foreground">Reduce spacing in tables and lists</p>
+                  <p className="text-sm text-muted-foreground">
+                    Reduce spacing in tables and lists
+                  </p>
                 </div>
                 <Switch />
               </div>
@@ -141,7 +152,9 @@ export default function SettingsForm() {
         </AccordionItem>
       </Accordion>
 
-      <Button onClick={handleSave} className="self-start">Save Settings</Button>
+      <Button onClick={handleSave} className="self-start">
+        Save Settings
+      </Button>
     </div>
   )
 }

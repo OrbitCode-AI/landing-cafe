@@ -1,6 +1,6 @@
-import { Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Search } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -8,17 +8,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import type { OrderStatus } from "@/data/orders"
+} from '@/components/ui/dropdown-menu'
+import type { OrderStatus } from '@/data/orders'
 
-const statuses: OrderStatus[] = ["pending", "preparing", "ready", "completed", "cancelled"]
+const statuses: OrderStatus[] = ['pending', 'preparing', 'ready', 'completed', 'cancelled']
 
 export default function OrdersFiltersPreview() {
   return (
     <OrdersFilters
       search=""
       onSearchChange={() => {}}
-      statusFilter={new Set<OrderStatus>(["pending", "preparing", "ready", "completed", "cancelled"])}
+      statusFilter={
+        new Set<OrderStatus>(['pending', 'preparing', 'ready', 'completed', 'cancelled'])
+      }
       onStatusFilterChange={() => {}}
     />
   )
@@ -42,7 +44,7 @@ export function OrdersFilters({
         <Input
           placeholder="Search orders..."
           value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
+          onChange={e => onSearchChange(e.target.value)}
           className="pl-9"
         />
       </div>
@@ -55,13 +57,12 @@ export function OrdersFilters({
         <DropdownMenuContent align="end" className="w-40">
           <DropdownMenuLabel>Filter by status</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {statuses.map((status) => (
+          {statuses.map(status => (
             <DropdownMenuCheckboxItem
               key={status}
               checked={statusFilter.has(status)}
               onCheckedChange={() => onStatusFilterChange(status)}
-              className="capitalize"
-            >
+              className="capitalize">
               {status}
             </DropdownMenuCheckboxItem>
           ))}

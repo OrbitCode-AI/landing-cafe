@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from 'react'
+import { Plus } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -8,28 +8,28 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { toast } from "sonner"
-import { categories } from "@/data/menu-items"
+} from '@/components/ui/select'
+import { toast } from 'sonner'
+import { categories } from '@/data/menu-items'
 
 export default function AddItemDialog() {
   const [open, setOpen] = useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    toast.success("Menu item added!", {
-      description: "The new item has been added to the menu.",
+    toast.success('Menu item added!', {
+      description: 'The new item has been added to the menu.',
     })
     setOpen(false)
   }
@@ -67,7 +67,7 @@ export default function AddItemDialog() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map((cat) => (
+                  {categories.map(cat => (
                     <SelectItem key={cat} value={cat} className="capitalize">
                       {cat}
                     </SelectItem>

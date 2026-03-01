@@ -1,7 +1,7 @@
-import { DollarSign, ShoppingBag, Users, Clock } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { stats } from "@/data/stats"
+import { DollarSign, ShoppingBag, Users, Clock } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { stats } from '@/data/stats'
 
 const icons = [DollarSign, ShoppingBag, Users, Clock]
 
@@ -22,9 +22,8 @@ export default function OverviewCards() {
               <div className="text-2xl font-bold">{stat.value}</div>
               <div className="flex items-center gap-1 pt-1">
                 <Badge
-                  variant={stat.trend === "up" ? "default" : "secondary"}
-                  className="text-xs px-1.5 py-0"
-                >
+                  variant={stat.trend === 'up' ? 'default' : 'secondary'}
+                  className="text-xs px-1.5 py-0">
                   {stat.change}
                 </Badge>
                 <span className="text-xs text-muted-foreground">{stat.description}</span>

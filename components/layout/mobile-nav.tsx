@@ -1,22 +1,23 @@
-import { Menu, type Coffee, LayoutDashboard, UtensilsCrossed, ClipboardList, Settings } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import { useState } from "react"
+  Menu,
+  type Coffee,
+  LayoutDashboard,
+  UtensilsCrossed,
+  ClipboardList,
+  Settings,
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { useState } from 'react'
 
-type Tab = "dashboard" | "menu" | "orders" | "settings"
+type Tab = 'dashboard' | 'menu' | 'orders' | 'settings'
 
 const navItems: { icon: typeof Coffee; label: string; value: Tab }[] = [
-  { icon: LayoutDashboard, label: "Dashboard", value: "dashboard" },
-  { icon: UtensilsCrossed, label: "Menu", value: "menu" },
-  { icon: ClipboardList, label: "Orders", value: "orders" },
-  { icon: Settings, label: "Settings", value: "settings" },
+  { icon: LayoutDashboard, label: 'Dashboard', value: 'dashboard' },
+  { icon: UtensilsCrossed, label: 'Menu', value: 'menu' },
+  { icon: ClipboardList, label: 'Orders', value: 'orders' },
+  { icon: Settings, label: 'Settings', value: 'settings' },
 ]
 
 export default function MobileNavPreview() {
@@ -51,20 +52,19 @@ export function MobileNav({
         </SheetHeader>
         <Separator className="bg-sidebar-border" />
         <nav className="flex flex-col gap-1 p-2">
-          {navItems.map((item) => (
+          {navItems.map(item => (
             <Button
               key={item.value}
               variant="ghost"
               className={`justify-start gap-3 ${
                 activeTab === item.value
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                  ? 'bg-sidebar-accent text-sidebar-accent-foreground'
+                  : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground'
               }`}
               onClick={() => {
                 onTabChange(item.value)
                 setOpen(false)
-              }}
-            >
+              }}>
               <item.icon className="h-5 w-5" />
               {item.label}
             </Button>

@@ -1,7 +1,7 @@
-import type * as React from "react"
-import { ScrollArea as ScrollAreaPrimitive } from "radix-ui"
+import type * as React from 'react'
+import { ScrollArea as ScrollAreaPrimitive } from 'radix-ui'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 function ScrollArea({
   className,
@@ -11,13 +11,11 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
-      className={cn("relative", className)}
-      {...props}
-    >
+      className={cn('relative', className)}
+      {...props}>
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1"
-      >
+        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1">
         {children}
       </ScrollAreaPrimitive.Viewport>
       <ScrollBar />
@@ -28,7 +26,7 @@ function ScrollArea({
 
 function ScrollBar({
   className,
-  orientation = "vertical",
+  orientation = 'vertical',
   ...props
 }: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {
   return (
@@ -36,15 +34,12 @@ function ScrollBar({
       data-slot="scroll-area-scrollbar"
       orientation={orientation}
       className={cn(
-        "flex touch-none p-px transition-colors select-none",
-        orientation === "vertical" &&
-          "h-full w-2.5 border-l border-l-transparent",
-        orientation === "horizontal" &&
-          "h-2.5 flex-col border-t border-t-transparent",
-        className
+        'flex touch-none p-px transition-colors select-none',
+        orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent',
+        orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent',
+        className,
       )}
-      {...props}
-    >
+      {...props}>
       <ScrollAreaPrimitive.ScrollAreaThumb
         data-slot="scroll-area-thumb"
         className="bg-border relative flex-1 rounded-full"
@@ -60,7 +55,9 @@ export default function ScrollAreaPreview() {
     <ScrollArea className="h-48 w-64 rounded-md border p-4">
       <div className="flex flex-col gap-2">
         {Array.from({ length: 20 }, (_, i) => (
-          <div key={i} className="text-sm">Item {i + 1}</div>
+          <div key={i} className="text-sm">
+            Item {i + 1}
+          </div>
         ))}
       </div>
     </ScrollArea>

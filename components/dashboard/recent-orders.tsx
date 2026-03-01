@@ -1,6 +1,6 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Table,
   TableBody,
@@ -8,16 +8,16 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { recentOrders } from "@/data/orders"
-import type { OrderStatus } from "@/data/orders"
+} from '@/components/ui/table'
+import { recentOrders } from '@/data/orders'
+import type { OrderStatus } from '@/data/orders'
 
-const statusVariant: Record<OrderStatus, "default" | "secondary" | "destructive" | "outline"> = {
-  pending: "outline",
-  preparing: "secondary",
-  ready: "default",
-  completed: "default",
-  cancelled: "destructive",
+const statusVariant: Record<OrderStatus, 'default' | 'secondary' | 'destructive' | 'outline'> = {
+  pending: 'outline',
+  preparing: 'secondary',
+  ready: 'default',
+  completed: 'default',
+  cancelled: 'destructive',
 }
 
 export default function RecentOrders() {
@@ -38,20 +38,18 @@ export default function RecentOrders() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {recentOrders.map((order) => (
+            {recentOrders.map(order => (
               <TableRow key={order.id}>
                 <TableCell>
                   <div className="flex items-center gap-2">
                     <Avatar className="h-7 w-7">
-                      <AvatarFallback className="text-xs bg-muted">
-                        {order.initials}
-                      </AvatarFallback>
+                      <AvatarFallback className="text-xs bg-muted">{order.initials}</AvatarFallback>
                     </Avatar>
                     <span className="font-medium text-sm">{order.customer}</span>
                   </div>
                 </TableCell>
                 <TableCell className="text-sm text-muted-foreground">
-                  {order.items.join(", ")}
+                  {order.items.join(', ')}
                 </TableCell>
                 <TableCell className="text-sm">${order.total.toFixed(2)}</TableCell>
                 <TableCell>

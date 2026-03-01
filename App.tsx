@@ -1,17 +1,17 @@
-import { useState } from "react"
-import "./index.css"
-import { TooltipProvider } from "@/components/ui/tooltip"
-import { Toaster } from "@/components/ui/sonner"
-import { AppSidebar } from "@/components/layout/app-sidebar"
-import { Header } from "@/components/layout/header"
-import OverviewCards from "@/components/dashboard/overview-cards"
-import RecentOrders from "@/components/dashboard/recent-orders"
-import PopularItems from "@/components/dashboard/popular-items"
-import MenuGrid from "@/components/menu/menu-grid"
-import OrdersTable from "@/components/orders/orders-table"
-import SettingsForm from "@/components/settings/settings-form"
+import { useState } from 'react'
+import './index.css'
+import { TooltipProvider } from '@/components/ui/tooltip'
+import { Toaster } from '@/components/ui/sonner'
+import { AppSidebar } from '@/components/layout/app-sidebar'
+import { Header } from '@/components/layout/header'
+import OverviewCards from '@/components/dashboard/overview-cards'
+import RecentOrders from '@/components/dashboard/recent-orders'
+import PopularItems from '@/components/dashboard/popular-items'
+import MenuGrid from '@/components/menu/menu-grid'
+import OrdersTable from '@/components/orders/orders-table'
+import SettingsForm from '@/components/settings/settings-form'
 
-type Tab = "dashboard" | "menu" | "orders" | "settings"
+type Tab = 'dashboard' | 'menu' | 'orders' | 'settings'
 
 function DashboardTab() {
   return (
@@ -30,7 +30,7 @@ function DashboardTab() {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<Tab>("dashboard")
+  const [activeTab, setActiveTab] = useState<Tab>('dashboard')
 
   return (
     <TooltipProvider disableHoverableContent>
@@ -39,10 +39,10 @@ export default function App() {
         <div className="flex flex-1 flex-col overflow-hidden">
           <Header activeTab={activeTab} onTabChange={setActiveTab} />
           <main className="flex-1 overflow-y-auto p-6 lg:p-10">
-            {activeTab === "dashboard" && <DashboardTab />}
-            {activeTab === "menu" && <MenuGrid />}
-            {activeTab === "orders" && <OrdersTable />}
-            {activeTab === "settings" && <SettingsForm />}
+            {activeTab === 'dashboard' && <DashboardTab />}
+            {activeTab === 'menu' && <MenuGrid />}
+            {activeTab === 'orders' && <OrdersTable />}
+            {activeTab === 'settings' && <SettingsForm />}
           </main>
         </div>
       </div>

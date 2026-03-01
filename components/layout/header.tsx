@@ -1,6 +1,6 @@
-import { Bell, LogOut, User } from "lucide-react"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Bell, LogOut, User } from 'lucide-react'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,16 +8,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { MobileNav } from "./mobile-nav"
+} from '@/components/ui/dropdown-menu'
+import { MobileNav } from './mobile-nav'
 
-type Tab = "dashboard" | "menu" | "orders" | "settings"
+type Tab = 'dashboard' | 'menu' | 'orders' | 'settings'
 
 const tabLabels: Record<Tab, string> = {
-  dashboard: "Dashboard",
-  menu: "Menu",
-  orders: "Orders",
-  settings: "Settings",
+  dashboard: 'Dashboard',
+  menu: 'Menu',
+  orders: 'Orders',
+  settings: 'Settings',
 }
 
 export default function HeaderPreview() {

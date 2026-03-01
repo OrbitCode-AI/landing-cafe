@@ -1,21 +1,22 @@
-import { useState } from "react"
-import { type Coffee, LayoutDashboard, UtensilsCrossed, ClipboardList, Settings } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { useState } from 'react'
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+  type Coffee,
+  LayoutDashboard,
+  UtensilsCrossed,
+  ClipboardList,
+  Settings,
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
-type Tab = "dashboard" | "menu" | "orders" | "settings"
+type Tab = 'dashboard' | 'menu' | 'orders' | 'settings'
 
 const navItems: { icon: typeof Coffee; label: string; value: Tab }[] = [
-  { icon: LayoutDashboard, label: "Dashboard", value: "dashboard" },
-  { icon: UtensilsCrossed, label: "Menu", value: "menu" },
-  { icon: ClipboardList, label: "Orders", value: "orders" },
-  { icon: Settings, label: "Settings", value: "settings" },
+  { icon: LayoutDashboard, label: 'Dashboard', value: 'dashboard' },
+  { icon: UtensilsCrossed, label: 'Menu', value: 'menu' },
+  { icon: ClipboardList, label: 'Orders', value: 'orders' },
+  { icon: Settings, label: 'Settings', value: 'settings' },
 ]
 
 export default function AppSidebarPreview() {
@@ -42,7 +43,7 @@ export function AppSidebar({
       </div>
       <Separator className="w-8 bg-sidebar-border" />
       <nav className="flex flex-1 flex-col items-center gap-2">
-        {navItems.map((item) => (
+        {navItems.map(item => (
           <Tooltip key={item.value} open={hoveredTab === item.value}>
             <TooltipTrigger asChild>
               <Button
@@ -50,15 +51,16 @@ export function AppSidebar({
                 size="icon"
                 className={`h-10 w-10 ${
                   activeTab === item.value
-                    ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                    ? 'bg-sidebar-accent text-sidebar-accent-foreground'
+                    : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground'
                 }`}
                 onFocus={() => setHoveredTab(item.value)}
                 onBlur={() => setHoveredTab(current => (current === item.value ? null : current))}
                 onMouseEnter={() => setHoveredTab(item.value)}
-                onMouseLeave={() => setHoveredTab(current => (current === item.value ? null : current))}
-                onClick={() => onTabChange(item.value)}
-              >
+                onMouseLeave={() =>
+                  setHoveredTab(current => (current === item.value ? null : current))
+                }
+                onClick={() => onTabChange(item.value)}>
                 <item.icon className="h-5 w-5" />
                 <span className="sr-only">{item.label}</span>
               </Button>

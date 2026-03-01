@@ -1,25 +1,26 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Checkbox } from "@/components/ui/checkbox"
-import type { MenuItem } from "@/data/menu-items"
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Checkbox } from '@/components/ui/checkbox'
+import type { MenuItem } from '@/data/menu-items'
 
 const categoryColors: Record<string, string> = {
-  coffee: "bg-amber-100 text-amber-800",
-  tea: "bg-green-100 text-green-800",
-  pastry: "bg-orange-100 text-orange-800",
-  sandwich: "bg-blue-100 text-blue-800",
-  smoothie: "bg-purple-100 text-purple-800",
+  coffee: 'bg-amber-100 text-amber-800',
+  tea: 'bg-green-100 text-green-800',
+  pastry: 'bg-orange-100 text-orange-800',
+  sandwich: 'bg-blue-100 text-blue-800',
+  smoothie: 'bg-purple-100 text-purple-800',
 }
 
 export default function MenuCardPreview() {
   return (
     <MenuCard
       item={{
-        id: "1",
-        name: "Caramel Latte",
-        description: "Rich espresso with steamed milk and caramel syrup, topped with whipped cream.",
-        price: 5.50,
-        category: "coffee",
+        id: '1',
+        name: 'Caramel Latte',
+        description:
+          'Rich espresso with steamed milk and caramel syrup, topped with whipped cream.',
+        price: 5.5,
+        category: 'coffee',
         available: true,
       }}
       onToggleAvailability={() => {}}
@@ -35,7 +36,7 @@ export function MenuCard({
   onToggleAvailability: (id: string) => void
 }) {
   return (
-    <Card className={!item.available ? "opacity-60" : ""}>
+    <Card className={!item.available ? 'opacity-60' : ''}>
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <CardTitle className="text-base">{item.name}</CardTitle>
@@ -54,7 +55,9 @@ export function MenuCard({
               checked={item.available}
               onCheckedChange={() => onToggleAvailability(item.id)}
             />
-            <label htmlFor={`avail-${item.id}`} className="text-sm text-muted-foreground cursor-pointer">
+            <label
+              htmlFor={`avail-${item.id}`}
+              className="text-sm text-muted-foreground cursor-pointer">
               Available
             </label>
           </div>
