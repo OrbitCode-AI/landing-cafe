@@ -1,6 +1,6 @@
 'use client'
 
-import type * as React from 'react'
+import type * as React from 'preact/compat'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import { Select as SelectPrimitive } from 'radix-ui'
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'preact/compat'
 import { menuItems as initialItems } from '@/data/menu-items'
 import { MenuCard } from './menu-card'
 import AddItemDialog from './add-item-dialog'

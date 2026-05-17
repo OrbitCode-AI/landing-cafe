@@ -9,7 +9,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import { useState } from 'react'
+import { useState } from 'preact/compat'
 
 type Tab = 'dashboard' | 'menu' | 'orders' | 'settings'
 

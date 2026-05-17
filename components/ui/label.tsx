@@ -1,4 +1,4 @@
-import type * as React from 'react'
+import type * as React from 'preact/compat'
 import { Label as LabelPrimitive } from 'radix-ui'
 
 import { cn } from '@/lib/utils'

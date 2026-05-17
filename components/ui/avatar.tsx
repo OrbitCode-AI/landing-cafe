@@ -1,4 +1,4 @@
-import type * as React from 'react'
+import type * as React from 'preact/compat'
 import { Avatar as AvatarPrimitive } from 'radix-ui'
 
 import { cn } from '@/lib/utils'

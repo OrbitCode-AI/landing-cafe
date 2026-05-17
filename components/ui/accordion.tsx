@@ -1,6 +1,6 @@
 'use client'
 
-import type * as React from 'react'
+import type * as React from 'preact/compat'
 import { ChevronDownIcon } from 'lucide-react'
 import { Accordion as AccordionPrimitive } from 'radix-ui'
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'preact/compat'
 import './index.css'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'

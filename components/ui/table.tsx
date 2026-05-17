@@ -1,6 +1,6 @@
 'use client'
 
-import type * as React from 'react'
+import type * as React from 'preact/compat'
 
 import { cn } from '@/lib/utils'
 
