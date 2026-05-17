@@ -12,9 +12,7 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'sonner' {
-  // biome-ignore lint/suspicious/noExplicitAny: untyped third-party
   export const Toaster: any
-  // biome-ignore lint/suspicious/noExplicitAny: untyped third-party
   export const toast: any
   export type ToasterProps = Record<string, unknown>
 }
